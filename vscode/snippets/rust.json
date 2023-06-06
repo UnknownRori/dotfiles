@@ -1,0 +1,11 @@
+{
+	"Boilerplate": {
+		"prefix": "!",
+		"body": [
+			"fn main() -> Result<(), &'static str> {",
+			"	Ok(())",
+			"}",
+		],
+		"description": "Boilerplate for Rust standard project"
+	}
+}

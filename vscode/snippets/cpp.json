@@ -1,0 +1,90 @@
+{
+    "Boilerplate C++": {
+        "prefix": "!",
+        "body": [
+            "#include <iostream>",
+            "",
+            "#define EXIT_FAILED 1",
+            "#define EXIT_SUCCESS 0",
+            "",
+            "auto main(int argc, char **argv) -> int",
+            "{",
+            "    std::cout << $1 << std::endl;",
+            "    return EXIT_SUCCESS;",
+            "}",
+        ],
+        "description": "C++ Boilerplate",
+    },
+    "Header File Boilerplate": {
+        "prefix": "!h",
+        "description": "Header file boilerplate",
+        "body": [
+            "#pragma once",
+            "",
+            "#ifndef UNKNOWNRORI_$1_HPP",
+            "#define UNKNOWNRORI_$1_HPP",
+            "",
+            "$2",
+            "",
+            "#endif // UNKNOWNRORI_$1_HPP",
+        ]
+    },
+    "Memory Allocation Macro": {
+        "prefix": "!m",
+        "description": "C Memory Allocation Macro",
+        "body": [
+            "#define drop(_PTR) \\",
+            "    delete _PTR;   \\",
+            "    _PTR = nullptr;",
+        ]
+    },
+    "Custom Types Boilerplate": {
+        "prefix": "!t",
+        "description": "C Type Boilerplate",
+        "body": [
+            "typedef float f32;",
+            "typedef double f64;",
+            "typedef int8_t i8;",
+            "typedef int16_t i16;",
+            "typedef int32_t i32;",
+            "typedef int64_t i64;",
+            "typedef __int128_t i128;",
+            "typedef uint8_t u8;",
+            "typedef uint16_t u16;",
+            "typedef uint32_t u32;",
+            "typedef uint64_t u64;",
+            "typedef __uint128_t u128;",
+            "typedef std::size_t usize;",
+            "typedef ssize_t isize;",
+        ]
+    },
+    "Logger & Assertion": {
+        "prefix": "!l",
+        "description": "Minimal C++ Assertion & Logger",
+        "body": [
+            "#define __FILENAME__ (std::strrchr(__FILE__, '/') ? std::strrchr(__FILE__, '/') + 1 : __FILE__)",
+            "#define ASSERT(__EXPRESSION, MSG)                                                                                         \\",
+            "    if (__EXPRESSION)                                                                                                     \\",
+            "        std::fprintf(stderr, \"\\e[1;32m[PASS]\\e[0m\\t\\e[1m%s:%d\\e[0m : %s\\n\\t%s\\n\", __FILENAME__, __LINE__, #__EXPRESSION, MSG); \\",
+            "    else                                                                                                                  \\",
+            "        std::fprintf(stderr, \"\\e[1;31m[FAIL]\\e[0m\\t\\e[1m%s:%d\\e[0m : %s\\n\\t%s\\n\", __FILENAME__, __LINE__, #__EXPRESSION, MSG);",
+            "#define LOG(__MSG) std::fprintf(stderr, \"\\e[1;33m[LOG]\\e[0m\\t\\e[1m%s:%d\\e[0m : %s\\n\", __FILENAME__, __LINE__, __MSG);",
+            "#define ERR(__MSG) std::fprintf(stderr, \"\\e[1;41m[ERR]\\e[0m\\t\\e[1m%s:%d\\e[0m : %s\\n\", __FILENAME__, __LINE__, __MSG);",
+        ]
+    },
+    "Cross-Compile Macro": {
+        "prefix": "!c",
+        "description": "Macro for creating Cross Compiled Platform",
+        "body": [
+            "#if defined(_WIN32)",
+            "",
+            "#elif defined(__linux__) || defined(__APPLE__)",
+            "",
+            "#else",
+            "",
+            "#error \"Unknown Target Architecture\"",
+            "",
+            "#endif",
+        ]
+    }
+}

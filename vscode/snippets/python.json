@@ -1,0 +1,17 @@
+{
+	"Python Boilerplate": {
+		"prefix": "!",
+		"description": "Python Boilerplate",
+		"body": [
+			"\"\"\"$1\"\"\"",
+			"",
+			"def main():",
+			"    \"Main Entry point\"",
+			"    print('Hi!')",
+			"    return 0",
+			"",
+			"if __name__ == '__main__':",
+			"    main()",
+		]
+	}
+}

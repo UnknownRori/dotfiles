@@ -1,0 +1,226 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Wait 2000 milliseconds for starship to check files under the current directory.
+scan_timeout = 2000
+command_timeout = 2000
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+format = """$shell$time$battery$memory_usage\n$os$username$all$directory$character"""
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+
+[cmd_duration]
+format = ' [$duration](bold yellow) '
+
+[shell]
+fish_indicator = '󰈺'
+powershell_indicator = '_'
+bash_indicator = ''
+unknown_indicator = ' '
+style = 'blue dim bold'
+disabled = false
+
+[username]
+style_user = 'blue bold'
+style_root = 'blue bold'
+format = '[\[$user@UnknownRori\]]($style) '
+disabled = false
+show_always = true
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = '󰍛 '
+format = '[\[$symbol${ram}|${swap}\]]($style)'
+style = 'dim white'
+
+[time]
+disabled = false
+format = '[\[󰥔 $time \]]($style) '
+use_12hr = true
+
+[fill]
+symbol = ' '
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+format = '[\[$symbol$percentage\]]($style) '
+
+[[battery.display]]
+threshold = 30
+charging_symbol = '󰂆 '
+discharging_symbol = '󰁼 '
+style = 'bold red'
+
+[[battery.display]]
+threshold = 50
+style = 'bold yellow'
+charging_symbol = '󰢝 '
+discharging_symbol = '󰁾 '
+
+
+[[battery.display]]
+threshold = 80
+style = 'bold blue'
+charging_symbol = '󰢞 '
+discharging_symbol = '󰂁 '
+
+[[battery.display]]
+threshold = 90
+style = 'bold blue'
+charging_symbol = '󰂋 '
+discharging_symbol = '󰂂 '
+
+[[battery.display]]
+threshold = 100
+style = 'bold blue'
+charging_symbol = '󰂅 '
+discharging_symbol = '󰁹 '
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+detect_extensions = ['c', 'h', 'cpp', 'hpp', 'cc', 'cxx']
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+truncate_to_repo = true
+style = "yellow"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[pijul_channel]
+symbol = "🪺 "
+
+[python]
+symbol = " "
+detect_extensions = ['py']
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "

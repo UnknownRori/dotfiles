@@ -1,0 +1,22 @@
+{
+	"Boilerplate": {
+		"prefix": "!",
+		"body": [
+			"# $1",
+			"",
+			"$2",
+			"",
+			"## 🛠️ Development",
+			"",
+			"```bash",
+			"```",
+			"",
+			"## 🚀 Usage",
+			"",
+			"## 🌟 Contribution",
+			"",
+			"Feel free to contribute, send pull request or issue and i will take a look",
+		],
+		"description": "Log output to console"
+	}
+}
