@@ -83,14 +83,16 @@ alias q="exit"
 alias c="code ."
 alias co="codium ."
 alias cls="clear"
-alias lss="ls -al"
+alias lss="ls -al --color"
 alias l="lss"
 alias restart="shutdown -r -t 10"
 alias poweroff="shutdown -s -t 10"
 alias pq="poweroff && exit"
+alias pr="restart && exit"
 alias resource="source ~/.bashrc"
 alias loc="cloc . --quiet --hide-rate"
 alias procs="procps -AmLw vac"
+alias tok=tokei
 
 # Check if bat available so it can be aliased as cat instead
 if [ -x "$(command -v bat)" ]; then
@@ -100,6 +102,20 @@ fi
 # Check if neovim available so it can be aliased as nv instead
 if [ -x "$(command -v nvim)" ]; then
     alias nv=nvim
+fi
+
+# Check if exa available so it can be aliased as ls instead
+if [ -x "$(command -v exa)" ]; then
+    alias ls=exa
+fi
+
+# Check if eza available so it can be aliased as ls instead
+if [ -x "$(command -v eza)" ]; then
+    alias ls=eza
+
+    alias lss="ls -al --icons"
+    alias tree="ls --tree --icons"
+    alias l="lss"
 fi
 
 # Check if neovide available so it can be aliased as nvi instead
@@ -145,7 +161,8 @@ color() {
     _color {232..255}
 }
 
-[ -f "/c/Users/HP/bin/win-sudo/s/path.sh" ] && source "/c/Users/HP/bin/win-sudo/s/path.sh"
+# Use this if you only have sudo in windows
+# [ -f "/c/Users/HP/bin/win-sudo/s/path.sh" ] && source "/c/Users/HP/bin/win-sudo/s/path.sh"
 
 if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"

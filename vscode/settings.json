@@ -1,9 +1,12 @@
 {
-    "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "git.autofetch": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.associations": {
+        "*.h": "c",
+        "*.hpp": "cpp"
+    },
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,
@@ -17,13 +20,23 @@
         "comments": "inline",
         "strings": "on"
     },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
     "[blade]": {
         "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "terminal.integrated.fastScrollSensitivity": 2,
     "terminal.integrated.fontWeight": "650",
     "terminal.integrated.fontWeightBold": "650",
     "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultProfile.windows": "Bash",
     "vsintellicode.features.python.deepLearning": "enabled",
     "explorer.confirmDragAndDrop": false,
     "artisan.serve.defaultHost": "127.0.0.1",
@@ -31,6 +44,7 @@
     "gitlens.showWhatsNewAfterUpgrades": false,
     "gitlens.telemetry.enabled": false,
     "gitlens.views.branches.branches.layout": "list",
+    "gitlens.graph.experimental.minimap.enabled": true,
     "gitlens.codeLens.scopes": [
         "document",
         "containers",
@@ -38,6 +52,7 @@
     ],
     "workbench.list.smoothScrolling": true,
     "diffEditor.codeLens": true,
+    "vim.neovimPath": "F:\\Program Files\\Neovim\\bin\\nvim.exe",
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 40,
     "vim.highlightedyank.color": "rgba(250, 250, 190, 1.0)",
@@ -577,8 +592,23 @@
         },
         {
             "before": [
-                "<leader>",
-                "h"
+                "<C-Up>",
+            ],
+            "commands": [
+                "workbench.action.decreaseViewHeight"
+            ]
+        },
+        {
+            "before": [
+                "<C-Down>",
+            ],
+            "commands": [
+                "workbench.action.increaseViewHeight"
+            ]
+        },
+        {
+            "before": [
+                "<C-Left>",
             ],
             "commands": [
                 "workbench.action.decreaseViewWidth"
@@ -586,8 +616,7 @@
         },
         {
             "before": [
-                "<leader>",
-                "l"
+                "<C-Right>",
             ],
             "commands": [
                 "workbench.action.increaseViewWidth"
@@ -650,6 +679,16 @@
                 "workbench.action.quickOpenWithModes"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.closeWindow"
+            ]
+        }
     ],
     "vim.operatorPendingModeKeyBindingsNonRecursive": [
         {
@@ -739,9 +778,10 @@
         "<C-d>": true
     },
     "search.searchEditor.defaultNumberOfContextLines": 2,
-    "editor.fontFamily": "Fira Code, Lucida Console, monospace",
+    "editor.fontFamily": "FiraCode Nerd Font, Lucida Console, monospace",
     "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Fira Code, Lucida Console, monospace",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font, Lucida Console, monospace",
+    "terminal.integrated.gpuAcceleration": "on",
     "wallpaper-setting.slideRandomPlay": true,
     "files.simpleDialog.enable": true,
     "search.showLineNumbers": true,
@@ -774,20 +814,21 @@
     "typescript.referencesCodeLens.showOnAllFunctions": true,
     "breadcrumbs.filePath": "last",
     "html.completion.attributeDefaultValue": "singlequotes",
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
     "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#999999",
+        "editorLineNumber.activeForeground": "#ffffff",
         "editor.lineHighlightBorder": "#4141419f",
         "editorRuler.foreground": "#646464",
     },
-    "html.format.indentInnerHtml": true,
     "editor.formatOnSave": true,
     "vetur.experimental.templateInterpolationService": true,
     "php.suggest.basic": false,
     "php.validate.enable": false,
     "workbench.editorAssociations": {
-        "*.db": "default",
         "*.bin": "hexEditor.hexedit"
     },
-    "wallpaper-setting.slideInterval": 2,
     "discord.detailsEditing": "🛠️ {file_name} - 📦 {file_size}",
     "discord.detailsDebugging": "🔨 {file_name} - 📦 {file_size}",
     "discord.largeImage": "🛠️ {LANG} file",
@@ -807,7 +848,7 @@
     ],
     "scm.inputFontFamly": "Fira Code, Lucida Console, monospace",
     "debug.console.fontFamily": "Fira Code, Lucida Console, monospace",
-    "editor.codeLensFontFamily": "Fira Code, Lucida Console, monospace",
+    "editor.codeLensFontFamily": "FiraCode Nerd Font, Lucida Console, monospace",
     "customizeUI.font.regular": "Fira Code, Lucida Console, ",
     "customizeUI.font.monospace": "Fira Code, Lucida Console, monospace",
     "hexeditor.columnWidth": 16,
@@ -816,9 +857,9 @@
     "hexeditor.defaultEndianness": "little",
     "editor.rulers": [
         80,
+        100,
         120
     ],
-    "diffEditor.ignoreTrimWhitespace": false,
     "volar.codeLens.pugTools": true,
     "volar.codeLens.scriptSetupTools": true,
     "errorLens.fontFamily": "Fira Code, Lucida Console, monospace",
@@ -849,6 +890,7 @@
     "liveshare.allowInvites": "all",
     "todo.archive.sortByDate": true,
     "redhat.telemetry.enabled": false,
+    "wallpaper-setting.slideInterval": 2,
     "githubPullRequests.pullBranch": "never",
     // "sqltools.useNodeRuntime": true,
     "sqltools.disableNodeDetectNotifications": true,
@@ -898,7 +940,6 @@
     "go.inlayHints.functionTypeParameters": true,
     "go.inlayHints.compositeLiteralTypes": true,
     "go.inlayHints.compositeLiteralFields": true,
-    "http.proxySupport": "fallback",
     "dotnetAcquisitionExtension.enableTelemetry": false,
     "java.codeGeneration.generateComments": true,
     "python.terminal.activateEnvironment": true,
@@ -918,6 +959,12 @@
     "rust-analyzer.inlayHints.bindingModeHints.enable": true,
     "rust-analyzer.debug.openDebugPane": true,
     "rust-analyzer.check.command": "clippy",
+    "zig.zls.inlayHintsHideRedundantParamNames": true,
+    "zig.zls.inlayHintsHideRedundantParamNamesLastToken": true,
+    "zig.zls.warnStyle": true,
+    "zig.zls.includeAtInBuiltins": true,
+    "zig.zls.highlightGlobalVarDeclarations": true,
+    "zig.zls.useComptimeInterpreter": true,
     "sonarlint.disableTelemetry": true,
     "makefile.compileCommandsPath": ".vscode/compile_commands.json",
     "editor.stickyScroll.maxLineCount": 3,
@@ -936,7 +983,6 @@
     "editor.mouseWheelScrollSensitivity": 2.5,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.inlineSuggest.showToolbar": "always",
-    "editor.minimap.autohide": true,
     "editor.minimap.enabled": false,
     "workbench.list.mouseWheelScrollSensitivity": 2,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
@@ -945,12 +991,12 @@
     "workbench.productIconTheme": "material-product-icons",
     "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.editor.showTabs": false,
-    "workbench.activityBar.visible": false,
     "workbench.preferredDarkColorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.preferredHighContrastColorTheme": "Community Material Theme Ocean High Contrast",
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 4,
     "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.visible": false,
     "zenMode.hideActivityBar": false,
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
@@ -958,7 +1004,7 @@
     "window.menuBarVisibility": "toggle",
     "window.restoreFullscreen": true,
     "window.commandCenter": false,
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}UnknownRori's Editor",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}Rori's Editor",
     "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span>UnknownRori</span> </div> <div style='font-size: 9px; margin-left: auto; margin-right: 1cm;'> <span class='pageNumber'></span> / <span class='totalPages'></span> </div>",
     "tailwindCSS.emmetCompletions": true,
     "rubyLsp.enabledFeatures": {
@@ -977,20 +1023,26 @@
         "completion": true,
         "codeLens": true
     },
+    "markdown.marp.exportType": "pptx",
+    "markdown.marp.themes": [
+        "https://raw.githubusercontent.com/dracula/marp/master/dracula/dracula.css"
+    ],
     "todohighlight.isEnable": true,
     "todohighlight.isCaseSensitive": true,
     "todohighlight.keywords": [
         "FIXME:", // without further details, this will use the defaultStyle
         "REVIEW:", // as will this
         {
-            "text": "INFO:", // without a defined regex pattern this is the string that will be matched
+            "text": "INFO(string):", // with a regex pattern defined, this setting isn't used, but is useful as a name for this section
+            "regex": {
+                "pattern": "(?<=^|\"|\\s)INFO(\\(\\w+\\))?:" // this allows for TODO: or TODO(Bob): etc.
+            },
             "color": "green",
             "backgroundColor": "rgba(0,0,0,0)", // INFO: setting the last parameter to zero (alpha channel) disables the background colour
             "border": "none",
-            "isWholeLine": false
         },
         {
-            "text": "WARNING:",
+            "text": "WARNING(string):", // with a regex pattern defined, this setting isn't used, but is useful as a name for this section
             "before": {
                 "contentText": "⚠️" // adds text before the highlight
             },
@@ -1039,5 +1091,36 @@
         "border": "1px solid #eee",
         "borderRadius": "2px",
         "isWholeLine": false,
-    }
+    },
+    "explorer.confirmDelete": false,
+    "todohighlight.enableDiagnostics": true,
+    "gitlens.graph.minimap.additionalTypes": [
+        "localBranches",
+        "stashes",
+        "remoteBranches"
+    ],
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "ngClass",
+        "classActive",
+        "classInactive",
+        "class!"
+    ],
+    "vscode-neovim.revealCursorScrollLine": true,
+    "colorize.languages": [
+        "rust",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg"
+    ],
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
 }

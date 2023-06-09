@@ -1,0 +1,34 @@
+{
+	"Boilerplate C": {
+		"prefix": "!c",
+		"description": "Simple boilerplate to spin up makefile",
+		"body": [
+			"CC = $1",
+			"FLAGS = -Wall -Werror -Wconversion -Wundef -Wshadow -Wdouble-promotion -fno-common -Wformat=2",
+			"DEBUG = -g -DDEBUG -DCOLORED -fstack-usage",
+			"",
+			"LIBS_FLAGS = $3",
+			"",
+			"TEMP = temp",
+			"DIST = dist",
+			"",
+			"MAIN_SRC = $2.c",
+			"MAIN_ELF = ./$(TEMP)/$2",
+			"",
+			"all:",
+			"	$(MAIN_ELF)",
+			"",
+			"build:",
+			"	$(CC) $(MAIN_SRC) -o $(MAIN_ELF) $(FLAGS) $(DEBUG) $(LIBS_FLAGS)",
+			"",
+			"setup:",
+			"	([ ! -e ./$(DIST) ] && mkdir $(DIST)) || [ -e ./$(DIST) ]",
+			"	([ ! -e ./$(TEMP) ] && mkdir $(TEMP)) || [ -e ./$(TEMP) ]",
+			"",
+			"clean: setup",
+			"	rm -r ./$(TEMP)",
+			"	rm -r ./$(DIST)",
+			""
+		]
+	}
+}

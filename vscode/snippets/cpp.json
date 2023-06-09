@@ -86,5 +86,16 @@
             "",
             "#endif",
         ]
+    },
+    "ifdef snippet": {
+        "prefix": "!i",
+        "description": "Snippet for fast ifdef",
+        "body": [
+            "#if $1",
+            "",
+            "$2",
+            "",
+            "#endif // $1",
+        ]
     }
 }

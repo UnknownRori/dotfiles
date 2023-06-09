@@ -42,6 +42,12 @@
         "prefix": "!t",
         "description": "C Type Boilerplate",
         "body": [
+            "#if defined(__cplusplus)",
+            "#include <cstdint>",
+            "#else // __cplusplus",
+            "#include <stdint.h>",
+            "#endif // __cplusplus",
+            "",
             "typedef float f32;",
             "typedef double f64;",
             "typedef int8_t i8;",
@@ -56,7 +62,10 @@
             "typedef __uint128_t u128;",
             "typedef size_t usize;",
             "typedef ssize_t isize;",
+            "",
+            "#if defined(__cplusplus) == 0",
             "#define nullptr NULL",
+            "#endif // __cplusplus",
         ]
     },
     "Logger & Assertion": {
@@ -86,6 +95,33 @@
             "#error \"Unknown Target Architecture\"",
             "",
             "#endif",
+        ]
+    },
+    "CPP Ifdef": {
+        "prefix": "!cpp",
+        "description": "If def for CPP Extern",
+        "body": [
+            "#if defined(__cplusplus)",
+            "extern \"C\"",
+            "{",
+            "#endif // __cplusplus",
+            "",
+            "$1",
+            "",
+            "#if defined(__cplusplus)",
+            "}",
+            "#endif // __cplusplus",
+        ]
+    },
+    "ifdef snippet": {
+        "prefix": "!i",
+        "description": "Snippet for fast ifdef",
+        "body": [
+            "#if $1",
+            "",
+            "$2",
+            "",
+            "#endif // $1",
         ]
     }
 }

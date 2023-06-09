@@ -1,4 +1,15 @@
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+    * {
+        transition: 450ms ease-in-out all;
+        font-family: "FiraCode Nerd Font", "Fira Code", "Fira Code Retina", "Poppins", "sans-serif", "monospace";
+    }
+
+    .wordmark {
+        background: url("firefox-woodmark-custom/woodmark-averia-sans-aurora.svg") no-repeat center center !important;
+        height: 92px !important;
+        width: 280px !important;
+    }
+
     .click-target-container *, .top-sites-list * {
         color: #fff !important ;
         text-shadow: 2px 2px 2px #222 !important ;
@@ -15,5 +26,43 @@
         opacity: 0.65;
         width: 100vw ;
         height: 100vh ;
+    }
+
+    .search-handoff-button {
+        background-color: color-mix(in xyz, var(--newtab-background-color-secondary), rgba(0, 0, 0, 0.50)) !important;
+        border-color: color-mix(in xyz, var(--newtab-background-color-secondary), rgba(0, 0, 0, 0.40)) !important;
+        padding-inline-start: 62px !important;
+    }
+
+    .search-handoff-button .fake-textbox {
+        opacity: 0.7 !important;
+    }
+
+    .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+        background: color-mix(in lch, var(--newtab-element-hover-color), rgba(0, 0, 0, 0.35)) !important;
+    }
+
+    .tile {
+        background-color: color-mix(in xyz, var(--newtab-background-color-secondary), rgba(0, 0, 0, 0.50)) !important;
+    }
+
+    .top-site-outer .top-site-icon {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .customize-menu {
+        transition: 600ms ease-in-out all;
+        background-color: color-mix(in xyz, var(--newtab-background-color-secondary), rgba(0, 0, 0, 0.80)) !important;
+    }
+
+}
+
+@-moz-document url(about:privatebrowsing) {
+    :root {
+        --newtab-background-color-secondary: #42414d;
+    }
+
+    .fake-textbox {
+        color: white !important;
     }
 }

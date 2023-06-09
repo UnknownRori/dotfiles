@@ -23,6 +23,7 @@ fish_indicator = '󰈺'
 powershell_indicator = '_'
 bash_indicator = ''
 unknown_indicator = ' '
+nu_indicator = '>'
 style = 'blue dim bold'
 disabled = false
 
