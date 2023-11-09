@@ -1,0 +1,34 @@
+:root{
+  --scroll-opacity: 0.50;
+
+  scrollbar-color: rgba(221, 221, 221, var(--scroll-opacity)) rgba(58, 58, 58, var(--scroll-scroll-opacity)) !important;
+  scrollbar-width: thin !important;
+  /* scrollbar-face-color: lightblue; /* background color (Firefox 63 only) */ */
+  /* scrollbar-track-color: lightgrey; /* thumb/slider color (Firefox 63 only) */ */
+  
+  /* background color [1. color] // thumb/slider color [2. color] (Firefox 64+) *********/
+  /* scrollbar-color: lightblue lightgrey; */
+  
+  /* size/width *************************************************************************/
+  /*	scrollbar-width: auto; = default OS scrollbars
+		scrollbar-width: thin; = small scrollbars without buttons
+		scrollbar-width: none; = scrollbars are hidden
+		scrollbar-width: 17px; (not working yet, but might be supported in the future)  */
+  /* scrollbar-width: thin; */
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(221, 221, 221, var(--scroll-opacity));
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(46, 54, 69, var(--scroll-opacity));
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(58, 58, 58, var(--scroll-opacity));
+}

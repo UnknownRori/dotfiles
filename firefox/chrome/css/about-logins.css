@@ -1,0 +1,46 @@
+@import "../config/variable.css";
+
+@-moz-document url-prefix(about:logins), url(about:logins) {
+    * {
+        transition: 450ms ease-in-out all;
+        font-family: var(--default-font-family);
+    }
+
+    body::before {
+        content: "" ;
+        z-index: -1 ;
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        background: #2b2a33 no-repeat url(../img/96714001_p0.png) center ;
+        background-size: cover ;
+        filter: brightness(0.5);
+        opacity: 0.65;
+        width: 100vw ;
+        height: 100vh ;
+    }
+
+    .filter[type="text"] {
+        background-color: color-mix(in xyz, var(--in-content-box-background), rgba(0, 0, 0, 0.50)) !important;
+    }
+
+    header,
+    .container ol[role="listbox"],
+    login-list,
+    div.meta {
+        background: transparent !important;
+    }
+    
+    .login-list-item.keyboard-selected,
+    .login-list-item.selected {
+        background: transparent !important;
+    }
+
+    .list-item.selected {
+        background: color-mix(in xyz, var(--in-content-page-background), rgba(0, 0, 0, 0.50)) !important;
+    }
+
+    .list-item:not(.selected):hover {
+        background: color-mix(in xyz, var(--in-content-page-background), rgba(25, 25, 25, 0.50)) !important;
+    }
+}
