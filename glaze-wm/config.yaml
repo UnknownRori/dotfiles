@@ -1,7 +1,7 @@
 focus_borders: 
   active: 
     enabled: true
-    color: "#7ce38b"
+    color: "#ffffff"
   inactive: 
     enabled: false
 gaps:
@@ -34,10 +34,10 @@ bar:
       label: "<attr fs='20' fg='#dedede'> </attr>{percent_usage}%"
       margin: "0px 5px 0px 0px"
       refresh_interval_ms: 1000
-    # - type: "gpu"
-    #   label: "<attr fs='20' fg='#dedede'>󱝊</attr>{percent_usage}%"
-    #   margin: "0px 10px 0px 0px"
-    #   refresh_interval_ms: 1000
+    - type: "gpu"
+      label: "<attr fs='20' fg='#dedede'>󱝊 </attr>{percent_usage}%"
+      margin: "0px 5px 0px 0px"
+      refresh_interval_ms: 1000
     - type: "memory"
       label: "<attr fs='20' fg='#dedede'> </attr>{percent_usage}%"
       margin: "0px 5px 0px 0px"
