@@ -14,6 +14,8 @@ if [ command -v tput &> /dev/null ]; then
     RED=
     WHITE=
 
+    RESET=
+
     color_prompt=
 else
     # Formatting & Coloring
@@ -29,13 +31,14 @@ else
     RED=$(tput setaf 1)
     WHITE=$(tput setaf 7)
 
+    RESET=$(tput sgr0)
+
     color_prompt=true
 fi
 
 # More Formatting
 NEWLINE=$'\n'
 TAB=$'\t'
-RESET=$(tput sgr0)
 
 # Some helper function for printing colored things
 __error() {
@@ -80,8 +83,9 @@ alias spark="php spark"
 alias serve="php -S 127.0.0.1:8000"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias q="exit"
-alias c="code ."
-alias co="codium ."
+# alias c="code ."
+# alias co="codium ."
+alias c="codium ."
 alias cls="clear"
 alias lss="ls -al --color"
 alias l="lss"
@@ -99,23 +103,18 @@ if [ -x "$(command -v bat)" ]; then
     alias cat=bat
 fi
 
+# Check if bat available so it can be aliased as cat instead
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza --icons"
+
+    alias lss="ls -al --icons"
+    alias lt="ls --tree --icons"
+    alias l="lss"
+fi
+
 # Check if neovim available so it can be aliased as nv instead
 if [ -x "$(command -v nvim)" ]; then
     alias nv=nvim
-fi
-
-# Check if exa available so it can be aliased as ls instead
-if [ -x "$(command -v exa)" ]; then
-    alias ls=exa
-fi
-
-# Check if eza available so it can be aliased as ls instead
-if [ -x "$(command -v eza)" ]; then
-    alias ls=eza
-
-    alias lss="ls -al --icons"
-    alias tree="ls --tree --icons"
-    alias l="lss"
 fi
 
 # Check if neovide available so it can be aliased as nvi instead
@@ -160,9 +159,6 @@ color() {
     done
     _color {232..255}
 }
-
-# Use this if you only have sudo in windows
-# [ -f "/c/Users/HP/bin/win-sudo/s/path.sh" ] && source "/c/Users/HP/bin/win-sudo/s/path.sh"
 
 if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"

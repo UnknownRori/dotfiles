@@ -102,9 +102,6 @@ workspaces:
   - name: "0"
 
 window_rules:
-  - command: "set floating"
-    match_class_name: "#32770"
-
   - command: "ignore"
     match_process_name: "keyviz|tauri|RustClient|Rust|Taskmgr"
 
