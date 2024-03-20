@@ -770,4 +770,24 @@ alias poweroff = shutdown -s -t 10
 alias tok = tokei
 alias nvi = neovide --multigrid
 
+# Custom service init
+alias mysql:start = systemd start mysql
+alias sqlserver:start = systemd start MSSQLSERVER
+alias postgres:start = systemd start postgresql-x64-14
+alias rabbitmq:start = systemd start RabbitMQ
+alias memurai:start = systemd start memurai
+alias redis:start = systemd start memurai
+alias apache:start = systemd start apache2.4
+
+alias mysql:stop = systemd stop mysql
+alias sqlserver:stop = systemd stop MSSQLSERVER
+alias postgres:stop = systemd stop postgresql-x64-14
+alias rabbitmq:stop = systemd stop RabbitMQ
+alias memurai:stop = systemd stop memurai
+alias redis:stop = systemd stop memurai
+alias apache:stop = systemd stop apache2.4
+
 use ~/.cache/starship/init.nu
+zoxide init nushell | save -f ~/.zoxide.nu
+source ~/.zoxide.nu
+alias cd = z

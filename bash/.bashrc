@@ -73,7 +73,7 @@ fi
 unset color_prompt force_color_prompt
 
 # Export some variable
-export RUST_BACKTRACE="full"
+# export RUST_BACKTRACE="full"
 
 # Alias
 alias phpunit="./vendor/phpunit/phpunit/phpunit"
@@ -97,6 +97,23 @@ alias resource="source ~/.bashrc"
 alias loc="cloc . --quiet --hide-rate"
 alias procs="procps -AmLw vac"
 alias tok=tokei
+alias komorebic:start="komorebic start -c $Env:USERPROFILE/komorebi.json --whkd"
+
+alias mysql:start="systemd start mysql"
+alias sqlserver:start="systemd start MSSQLSERVER"
+alias postgres:start="systemd start postgresql-x64-14"
+alias rabbitmq:start="systemd start RabbitMQ"
+alias memurai:start="systemd start memurai"
+alias redis:start="systemd start memurai"
+alias apache:start="systemd start apache2.4"
+
+alias mysql:stop="systemd stop mysql"
+alias sqlserver:stop="systemd stop MSSQLSERVER"
+alias postgres:stop="systemd stop postgresql-x64-14"
+alias rabbitmq:stop="systemd stop RabbitMQ"
+alias memurai:stop="systemd stop memurai"
+alias redis:stop="systemd stop memurai"
+alias apache:stop="systemd stop apache2.4"
 
 # Check if bat available so it can be aliased as cat instead
 if [ -x "$(command -v bat)" ]; then
@@ -105,12 +122,18 @@ fi
 
 # Check if bat available so it can be aliased as cat instead
 if [ -x "$(command -v eza)" ]; then
-    alias ls="eza --icons"
+    alias ls="eza --icons --sort=name --group-directories-first"
 
     alias lss="ls -al --icons"
     alias lt="ls --tree --icons"
     alias l="lss"
 fi
+
+if [ -x "$(command -v zoxide)" ]; then
+    eval "$(zoxide init bash)"
+    alias cd="z"
+fi
+
 
 # Check if neovim available so it can be aliased as nv instead
 if [ -x "$(command -v nvim)" ]; then
@@ -162,4 +185,9 @@ color() {
 
 if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"
+fi
+
+# Nu shell
+if [ -x "$(command -v nu)" ]; then
+    nu
 fi
